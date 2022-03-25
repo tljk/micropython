@@ -427,7 +427,7 @@ mp_obj_t mp_stream_close(mp_obj_t stream) {
 }
 MP_DEFINE_CONST_FUN_OBJ_1(mp_stream_close_obj, mp_stream_close);
 
-STATIC mp_obj_t stream_seek(size_t n_args, const mp_obj_t *args) {
+mp_obj_t stream_seek(size_t n_args, const mp_obj_t *args) {
     struct mp_stream_seek_t seek_s;
     // TODO: Could be uint64
     seek_s.offset = mp_obj_get_int(args[1]);

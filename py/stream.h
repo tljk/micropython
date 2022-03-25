@@ -113,6 +113,7 @@ mp_obj_t mp_stream_write(mp_obj_t self_in, const void *buf, size_t len, byte fla
 mp_uint_t mp_stream_rw(mp_obj_t stream, void *buf, mp_uint_t size, int *errcode, byte flags);
 #define mp_stream_write_exactly(stream, buf, size, err) mp_stream_rw(stream, (byte *)buf, size, err, MP_STREAM_RW_WRITE)
 #define mp_stream_read_exactly(stream, buf, size, err) mp_stream_rw(stream, buf, size, err, MP_STREAM_RW_READ)
+mp_obj_t stream_seek(size_t n_args, const mp_obj_t *args);
 
 void mp_stream_write_adaptor(void *self, const char *buf, size_t len);
 
